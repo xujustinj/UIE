@@ -177,7 +177,6 @@ get_gpu_num() {
     num=$((${num} + 1))
   done
   echo ${num}
-  return ${num}
 }
 
 function rand(){
@@ -192,6 +191,7 @@ gpu_num=$(get_gpu_num)
 # For multiple GPU, use the Distributed version of PyTorch
 if [[ ${gpu_num} == 1 ]]
 then
+    echo "True"
     run_command=python3
 else
     master_port=$(rand 10000 50000)

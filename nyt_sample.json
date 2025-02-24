@@ -1,0 +1,118 @@
+{
+    "text": "In Queens , North Shore Towers , near the Nassau border , supplanted a golf course , and housing replaced a gravel quarry in Douglaston .",
+    "tokens": [
+        "In",
+        "Queens",
+        ",",
+        "North",
+        "Shore",
+        "Towers",
+        ",",
+        "near",
+        "the",
+        "Nassau",
+        "border",
+        ",",
+        "supplanted",
+        "a",
+        "golf",
+        "course",
+        ",",
+        "and",
+        "housing",
+        "replaced",
+        "a",
+        "gravel",
+        "quarry",
+        "in",
+        "Douglaston",
+        "."
+    ],
+    "record": "<extra_id_0> <extra_id_0> location <extra_id_5> Queens <extra_id_0> contains <extra_id_5> Douglaston <extra_id_1> <extra_id_1> <extra_id_0> location <extra_id_5> Douglaston <extra_id_0> neighborhood of <extra_id_5> Queens <extra_id_1> <extra_id_1> <extra_id_1>",
+    "entity": [
+        {
+            "type": "location",
+            "offset": [
+                24
+            ],
+            "text": "Douglaston"
+        },
+        {
+            "type": "location",
+            "offset": [
+                1
+            ],
+            "text": "Queens"
+        }
+    ],
+    "relation": [
+        {
+            "type": "neighborhood of",
+            "args": [
+                {
+                    "type": "location",
+                    "offset": [
+                        24
+                    ],
+                    "text": "Douglaston"
+                },
+                {
+                    "type": "location",
+                    "offset": [
+                        1
+                    ],
+                    "text": "Queens"
+                }
+            ]
+        },
+        {
+            "type": "contains",
+            "args": [
+                {
+                    "type": "location",
+                    "offset": [
+                        1
+                    ],
+                    "text": "Queens"
+                },
+                {
+                    "type": "location",
+                    "offset": [
+                        24
+                    ],
+                    "text": "Douglaston"
+                }
+            ]
+        }
+    ],
+    "event": [],
+    "spot": [
+        "location"
+    ],
+    "asoc": [
+        "contains",
+        "neighborhood of"
+    ],
+    "spot_asoc": [
+        {
+            "span": "Queens",
+            "label": "location",
+            "asoc": [
+                [
+                    "contains",
+                    "Douglaston"
+                ]
+            ]
+        },
+        {
+            "span": "Douglaston",
+            "label": "location",
+            "asoc": [
+                [
+                    "neighborhood of",
+                    "Queens"
+                ]
+            ]
+        }
+    ]
+}

@@ -177,16 +177,20 @@ def main():
     parser.add_argument("-format", dest="generation_format", default="spotasoc")
     parser.add_argument("-config", dest="config", default="data_config/relation")
     parser.add_argument("-output", dest="output", default="relation")
+    parser.add_argument("-dataset", default=None, dest="dataset")
     options = parser.parse_args()
 
     generation_class = generation_format_dict.get(options.generation_format)
 
-    if os.path.isfile(options.config):
-        config_list = [options.config]
+    if parser.dataset is None:
+        if os.path.isfile(options.config):
+            config_list = [options.config]
+        else:
+            config_list = [
+                os.path.join(options.config, x) for x in os.listdir(options.config)
+            ]
     else:
-        config_list = [
-            os.path.join(options.config, x) for x in os.listdir(options.config)
-        ]
+        config_list = [os.path.join(options.config, f"{parser.dataset}.yaml")]
 
     for filename in config_list:
         dataset = Dataset.load_yaml_file(filename)

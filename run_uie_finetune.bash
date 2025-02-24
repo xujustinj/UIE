@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # -*- coding:utf-8 -*-
+set -e
+set -x
+
 export batch_size="16"
 export model_name=uie-base-en
 export data_name=absa/14lap
