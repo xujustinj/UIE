@@ -1,0 +1,133 @@
+{
+    "text": "An email scam passing as a Netflix notification has been targeting subscribers of the streaming service .",
+    "tokens": [
+        "An",
+        "email",
+        "scam",
+        "passing",
+        "as",
+        "a",
+        "Netflix",
+        "notification",
+        "has",
+        "been",
+        "targeting",
+        "subscribers",
+        "of",
+        "the",
+        "streaming",
+        "service",
+        "."
+    ],
+    "record": "<extra_id_0> <extra_id_0> phishing <extra_id_5> email scam <extra_id_0> trusted entity <extra_id_5> a Netflix notification <extra_id_1> <extra_id_0> victim <extra_id_5> subscribers <extra_id_1> <extra_id_0> trusted entity <extra_id_5> the streaming service <extra_id_1> <extra_id_1> <extra_id_0> file <extra_id_5> a Netflix notification <extra_id_1> <extra_id_0> person <extra_id_5> subscribers <extra_id_1> <extra_id_0> system <extra_id_5> the streaming service <extra_id_1> <extra_id_1>",
+    "entity": [
+        {
+            "type": "file",
+            "offset": [
+                5,
+                6,
+                7
+            ],
+            "text": "a Netflix notification"
+        },
+        {
+            "type": "system",
+            "offset": [
+                13,
+                14,
+                15
+            ],
+            "text": "the streaming service"
+        },
+        {
+            "type": "person",
+            "offset": [
+                11
+            ],
+            "text": "subscribers"
+        }
+    ],
+    "relation": [],
+    "event": [
+        {
+            "type": "phishing",
+            "offset": [
+                1,
+                2
+            ],
+            "text": "email scam",
+            "args": [
+                {
+                    "type": "trusted entity",
+                    "offset": [
+                        5,
+                        6,
+                        7
+                    ],
+                    "text": "a Netflix notification"
+                },
+                {
+                    "type": "trusted entity",
+                    "offset": [
+                        13,
+                        14,
+                        15
+                    ],
+                    "text": "the streaming service"
+                },
+                {
+                    "type": "victim",
+                    "offset": [
+                        11
+                    ],
+                    "text": "subscribers"
+                }
+            ]
+        }
+    ],
+    "spot": [
+        "phishing",
+        "system",
+        "person",
+        "file"
+    ],
+    "asoc": [
+        "trusted entity",
+        "victim"
+    ],
+    "spot_asoc": [
+        {
+            "span": "email scam",
+            "label": "phishing",
+            "asoc": [
+                [
+                    "trusted entity",
+                    "a Netflix notification"
+                ],
+                [
+                    "victim",
+                    "subscribers"
+                ],
+                [
+                    "trusted entity",
+                    "the streaming service"
+                ]
+            ]
+        },
+        {
+            "span": "a Netflix notification",
+            "label": "file",
+            "asoc": []
+        },
+        {
+            "span": "subscribers",
+            "label": "person",
+            "asoc": []
+        },
+        {
+            "span": "the streaming service",
+            "label": "system",
+            "asoc": []
+        }
+    ]
+}

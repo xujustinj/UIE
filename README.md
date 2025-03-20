@@ -62,13 +62,13 @@ Details definition see [DATASETS.md](docs/DATASETS.md).
 Note:
 - Use the extra character of T5 as the structure indicators, such as `<extra_id_0>`, `<extra_id_1>`, `<extra_id_5>`.
 
-| Token  | Role |
-| ------------- | ------------- |
-| <extra_id_0>  | Start of Label Name |
-| <extra_id_1>  | End of Label Name   |
-| <extra_id_2>  | Start of Input Text |
-| <extra_id_5>  | Start of Text Span  |
-| <extra_id_6>  | NULL span for Rejection |
+| Token        | Role                    | Symbol in Paper |
+| ------------ | ----------------------- | --------------- |
+| <extra_id_0> | Start of Label Name     | `(`             |
+| <extra_id_1> | End of Label Name       | `)`             |
+| <extra_id_2> | Start of Input Text     |                 |
+| <extra_id_5> | Start of Text Span      | `:`             |
+| <extra_id_6> | NULL span for Rejection |                 |
 
 - `record.schema` is the record schema file for building SSI.
 It contains three lines: the first line is spot name list, the second line is asoc name list. And the third line is spot-to-asoc dictionary (do not use in code, can be ignored).
@@ -113,7 +113,7 @@ arguments):
 . config/data_conf/base_model_conf_absa.ini  && model_name=uie-base-en dataset_name=absa/14lap bash scripts_exp/run_exp.bash
 ```
 
-- `config/data_conf/base_model_conf_absa.ini` refers to using the training settings in `base_model_conf_absa.ini` 
+- `config/data_conf/base_model_conf_absa.ini` refers to using the training settings in `base_model_conf_absa.ini`
 - `model_name=uie-base-en` refers to using uie-base-en.
 - `dataset_name=absa/14lap` refers to the dataset path.
 
@@ -190,19 +190,19 @@ It contains multiple data collators for different instances:
 
 #### DataCollatorForMetaSeq2Seq
 
-**_Sampling Strategy_** and **_Rejection Mechanism_** can be adopted in the training process. 
+**_Sampling Strategy_** and **_Rejection Mechanism_** can be adopted in the training process.
 
 - `uie/seq2seq/data_collator/meta_data_collator.py` class _DataCollatorForMetaSeq2Seq_ is for collating data, class _DynamicSSIGenerator_ is for prompt sampling
 - `run_uie_finetune.py` class _DataTrainingArguments_ contains related parameters
 
-Related parameters in class _DataTrainingArguments_ are briefly introduced here: 
+Related parameters in class _DataTrainingArguments_ are briefly introduced here:
 
 - About **_Sampling Strategy_**
 ``` text
     - max_prefix_length       Maximum length of SSI
     - ordered_prompt          Whether to sort the spot/asoc of SSI or not
     - record_schema           record schema read from record.schema
-``` 
+```
 
 - About **_Rejection Mechanism_**
 ``` text
@@ -218,7 +218,7 @@ To verify the performance of the UIE requires converting the generated **SEL** e
 After training, `pred_folder` will contain 'eval_preds_seq2seq.txt' or 'test_preds_seq2seq.txt'
 
 ``` text
- $ python scripts/sel2record.py -h     
+ $ python scripts/sel2record.py -h
 usage: sel2record.py [-h] [-g GOLD_FOLDER] [-p PRED_FOLDER [PRED_FOLDER ...]] [-c MAP_CONFIG] [-d DECODING] [-v]
 
 optional arguments:
@@ -236,7 +236,7 @@ optional arguments:
 After converting, `pred_folder` will contain 'eval_preds_record.txt' or 'test_preds_record.txt'
 
 ```text
- $ python scripts/eval_extraction.py -h   
+ $ python scripts/eval_extraction.py -h
 usage: eval_extraction.py [-h] [-g GOLD_FOLDER] [-p PRED_FOLDER [PRED_FOLDER ...]] [-v] [-w] [-m] [-case]
 
 optional arguments:

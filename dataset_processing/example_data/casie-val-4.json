@@ -1,0 +1,126 @@
+{
+    "text": "Ticketfly did n't comment on whether any user information , such as credit card data , had been stolen in the cyberattack .",
+    "tokens": [
+        "Ticketfly",
+        "did",
+        "n't",
+        "comment",
+        "on",
+        "whether",
+        "any",
+        "user",
+        "information",
+        ",",
+        "such",
+        "as",
+        "credit",
+        "card",
+        "data",
+        ",",
+        "had",
+        "been",
+        "stolen",
+        "in",
+        "the",
+        "cyberattack",
+        "."
+    ],
+    "record": "<extra_id_0> <extra_id_0> personally identifiable information <extra_id_5> user information <extra_id_1> <extra_id_0> personally identifiable information <extra_id_5> credit card data <extra_id_1> <extra_id_0> databreach <extra_id_5> had been stolen <extra_id_0> compromised data <extra_id_5> user information <extra_id_1> <extra_id_0> compromised data <extra_id_5> credit card data <extra_id_1> <extra_id_1> <extra_id_0> databreach <extra_id_5> the cyberattack <extra_id_1> <extra_id_1>",
+    "entity": [
+        {
+            "type": "personally identifiable information",
+            "offset": [
+                7,
+                8
+            ],
+            "text": "user information"
+        },
+        {
+            "type": "personally identifiable information",
+            "offset": [
+                12,
+                13,
+                14
+            ],
+            "text": "credit card data"
+        }
+    ],
+    "relation": [],
+    "event": [
+        {
+            "type": "databreach",
+            "offset": [
+                16,
+                17,
+                18
+            ],
+            "text": "had been stolen",
+            "args": [
+                {
+                    "type": "compromised data",
+                    "offset": [
+                        7,
+                        8
+                    ],
+                    "text": "user information"
+                },
+                {
+                    "type": "compromised data",
+                    "offset": [
+                        12,
+                        13,
+                        14
+                    ],
+                    "text": "credit card data"
+                }
+            ]
+        },
+        {
+            "type": "databreach",
+            "offset": [
+                20,
+                21
+            ],
+            "text": "the cyberattack",
+            "args": []
+        }
+    ],
+    "spot": [
+        "databreach",
+        "personally identifiable information"
+    ],
+    "asoc": [
+        "compromised data"
+    ],
+    "spot_asoc": [
+        {
+            "span": "user information",
+            "label": "personally identifiable information",
+            "asoc": []
+        },
+        {
+            "span": "credit card data",
+            "label": "personally identifiable information",
+            "asoc": []
+        },
+        {
+            "span": "had been stolen",
+            "label": "databreach",
+            "asoc": [
+                [
+                    "compromised data",
+                    "user information"
+                ],
+                [
+                    "compromised data",
+                    "credit card data"
+                ]
+            ]
+        },
+        {
+            "span": "the cyberattack",
+            "label": "databreach",
+            "asoc": []
+        }
+    ]
+}

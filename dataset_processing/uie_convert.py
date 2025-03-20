@@ -182,7 +182,7 @@ def main():
 
     generation_class = generation_format_dict.get(options.generation_format)
 
-    if parser.dataset is None:
+    if options.dataset is None:
         if os.path.isfile(options.config):
             config_list = [options.config]
         else:
@@ -190,7 +190,7 @@ def main():
                 os.path.join(options.config, x) for x in os.listdir(options.config)
             ]
     else:
-        config_list = [os.path.join(options.config, f"{parser.dataset}.yaml")]
+        config_list = [os.path.join(options.config, f"{options.dataset}.yaml")]
 
     for filename in config_list:
         dataset = Dataset.load_yaml_file(filename)
